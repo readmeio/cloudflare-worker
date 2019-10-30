@@ -2,11 +2,11 @@ const webpack = require('webpack');
 const { join, resolve } = require('path');
 const { version } = require('./package.json');
 
-module.exports = (env, { host }) => {
+module.exports = (env, { host, entry }) => {
   if (!host) throw new Error('Must provide a host');
 
   return {
-    entry: join(__dirname, '/template.js'),
+    entry: entry || join(__dirname, '/template.js'),
     target: 'webworker',
     // Allow overriding env via `--env development`
     // or just default it to production
