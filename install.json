@@ -5,6 +5,18 @@
       "src": "./dist/main.js"
     }
   ],
+  "hooks": [
+    {
+      "endpoint": "https://oauthreq.readme.io/cloudflare-webhook",
+      "events": [
+        "option-change:account",
+        "preview",
+        "before-update-install"
+      ],
+      "block": true,
+      "authenticate": ["account"]
+    }
+  ],
   "options": {
     "properties": {
       "account": {

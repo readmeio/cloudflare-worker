@@ -1,33 +1,20 @@
 /* eslint-env worker */
 /* global HOST, VERSION */
-
 async function getRequestBody(request) {
   if (request.method.match(/GET|HEAD/)) {
     return { req: request, body: null };
   }
 
-  const body = await request.text();
-
   return {
-    req: new Request(request.url, {
-      method: request.method,
-      headers: request.headers,
-      body,
-    }),
-    body,
+    req: request.clone(),
+    body: await request.text(),
   };
 }
 
 async function getResponseBody(response) {
-  const body = await response.text();
-
   return {
-    res: new Response(body, {
-      status: response.status,
-      statusText: response.statusText,
-      headers: response.headers,
-    }),
-    body,
+    res: response.clone(),
+    body: await response.text(),
   };
 }
 
