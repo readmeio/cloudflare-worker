@@ -11,7 +11,7 @@ module.exports = (e, event) => {
 
   report.app = {
     id: '@readme/cloudflare-worker',
-    version: VERSION || 'node', // eslint-disable-line no-undef
+    version: typeof VERSION !== 'undefined' ? VERSION : 'readme-cloudflare',
   };
 
   event.waitUntil(
@@ -23,7 +23,7 @@ module.exports = (e, event) => {
       body: JSON.stringify({
         notifier: {
           name: '@readme/cloudflare-worker',
-          version: VERSION || 'node', // eslint-disable-line no-undef
+          version: typeof VERSION !== 'undefined' ? VERSION : 'readme-cloudflare',
           url: 'https://github.com/readmeio/cloudflare-worker/',
         },
         events: [report],

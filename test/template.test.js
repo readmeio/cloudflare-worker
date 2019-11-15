@@ -7,14 +7,17 @@ const nock = require('nock');
 // Have to set this up here because this is normally done from within webpack
 // We could use compile() in this test and eval() the output
 // but then we lose all stack traces from the errors
-require('module-alias').addAlias('@readme/cloudflare-worker', join(__dirname, '..', 'index.js'));
+require('module-alias').addAlias(
+  '@readme/cloudflare-worker',
+  join(__dirname, '../src', 'index.js'),
+);
 
 const globals = require('./service-worker-globals');
 
 function requireTemplate() {
-  delete require.cache[require.resolve('../template.js')];
+  delete require.cache[require.resolve('../src/template.js')];
   delete require.cache[require.resolve('@readme/cloudflare-worker')];
-  require('../template'); // eslint-disable-line global-require
+  require('../src/template'); // eslint-disable-line global-require
 }
 
 class FetchEvent {

@@ -74,7 +74,7 @@ module.exports.fetchAndCollect = async function fetchAndCollect(request) {
             method: req.method,
             url: req.url,
             // TODO get http version correctly?
-            httpVersion: '1.1',
+            httpVersion: req.httpVersion || '1.1',
             headers: [...req.headers].map(([name, value]) => ({ name, value })),
             queryString: [...new URL(req.url).searchParams].map(([name, value]) => ({
               name,

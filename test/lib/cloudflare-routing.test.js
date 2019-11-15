@@ -1,7 +1,7 @@
 /* eslint-env mocha */
 const assert = require('assert');
-const matchRouteWhitelist = require('../lib/cloudflare-routing.js');
-const globals = require('./service-worker-globals');
+const matchRouteWhitelist = require('../../src/lib/cloudflare-routing.js');
+const globals = require('../service-worker-globals');
 
 describe('cloudflare-routing()', () => {
   beforeEach(() => {

@@ -10,6 +10,7 @@
     "import/no-unresolved": ["error", { "ignore": ["@readme/cloudflare-worker"] }]
   },
   "globals": {
-      "INSTALL_OPTIONS": "readonly"
+      "INSTALL_OPTIONS": "readonly",
+      "VERSION": true
     }
 }

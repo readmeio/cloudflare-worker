@@ -6,7 +6,7 @@ module.exports = (env, { host }) => {
   if (!host) throw new Error('Must provide a host');
 
   return {
-    entry: join(__dirname, '/template.js'),
+    entry: join(__dirname, 'src', '/template.js'),
     target: 'webworker',
     // Allow overriding env via `--env development`
     // or just default it to production
@@ -26,7 +26,7 @@ module.exports = (env, { host }) => {
       alias: {
         // Setting up an alias here allows us to keep the template
         // code tidy whilst allowing us to keep it inside of this repo
-        '@readme/cloudflare-worker': resolve(__dirname, 'index.js'),
+        '@readme/cloudflare-worker': resolve(__dirname, 'src', 'index.js'),
       },
     },
     output: {
