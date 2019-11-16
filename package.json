@@ -5,8 +5,7 @@
   "dependencies": {
     "@bugsnag/core": "^6.4.1",
     "error-stack-parser": "^2.0.4",
-    "minimatch": "^3.0.4",
-    "sinon": "^7.5.0"
+    "minimatch": "^3.0.4"
   },
   "scripts": {
     "lint": "eslint -f unix .",
@@ -34,6 +33,7 @@
     "eslint-plugin-import": "^2.14.0",
     "jsinspect": "^0.12.7",
     "mocha": "^5.2.0",
+    "sinon": "^7.5.0",
     "module-alias": "^2.1.0",
     "nock": "^10.0.0",
     "node-fetch": "^2.2.0",
