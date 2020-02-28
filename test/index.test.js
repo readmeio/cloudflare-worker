@@ -215,6 +215,8 @@ describe('worker', () => {
 
       const { har } = await requireWorker().fetchAndCollect(request);
       const headers = har.log.entries[0].response.headers.map(h => h.name);
+      assert.equal(headers.indexOf('x-readme-id'), -1);
+      assert.equal(headers.indexOf('x-readme-label'), -1);
       assert.equal(headers.indexOf('x-readme-email'), -1);
     });
   });
