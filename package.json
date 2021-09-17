@@ -5,6 +5,10 @@
   "dependencies": {
     "minimatch": "^3.0.4"
   },
+  "engines": {
+    "node": "^12 || ^14 || ^16",
+    "npm": "^7"
+  },
   "scripts": {
     "lint": "eslint -f unix .",
     "inspect": "jsinspect --ignore 'dist'",
