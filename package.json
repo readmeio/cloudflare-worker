@@ -10,10 +10,9 @@
     "npm": "^7"
   },
   "scripts": {
-    "lint": "eslint -f unix .",
-    "inspect": "jsinspect --ignore 'dist'",
+    "lint": "eslint .",
+    "pretest": "npm run lint",
     "prettier": "prettier --list-different \"./**/**.js\"",
-    "pretest": "npm run lint && npm run inspect && npm run prettier",
     "test": "nyc --reporter=lcov mocha",
     "prepublishOnly": "webpack --host https://metrics.readme.io",
     "posttest": "nyc check-coverage --statements 90 --branches 90 --functions 90 --lines 90"
@@ -29,18 +28,16 @@
     "url": "git@github.com:readmeio/cloudflare-worker.git"
   },
   "devDependencies": {
-    "eslint": "^5.2.0",
-    "eslint-config-airbnb-base": "^13.0.0",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-import": "^2.14.0",
-    "jsinspect": "^0.12.7",
+    "@readme/eslint-config": "^7.1.1",
+    "eslint": "^7.32.0",
     "mocha": "^5.2.0",
     "module-alias": "^2.1.0",
     "nock": "^10.0.0",
     "node-fetch": "^2.2.0",
     "nyc": "^13.0.1",
-    "prettier": "^1.14.0",
+    "prettier": "^2.4.1",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.1"
-  }
+  },
+  "prettier": "@readme/eslint-config/prettier"
 }

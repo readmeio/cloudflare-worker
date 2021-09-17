@@ -1,13 +1,14 @@
 {
+  "extends": "@readme/eslint-config",
+  "root": true,
   "env": {
-    "worker": true,
-    "browser": true
+    "browser": true,
+    "worker": true
   },
-  "extends": ["airbnb-base", "prettier"],
   "rules": {
+    "import/no-unresolved": ["error", { "ignore": ["@readme/cloudflare-worker"] }],
     "no-restricted-globals": 0,
-    "no-use-before-define": ["error", "nofunc"],
-    "import/no-unresolved": ["error", { "ignore": ["@readme/cloudflare-worker"] }]
+    "no-use-before-define": ["error", "nofunc"]
   },
   "globals": {
     "INSTALL_OPTIONS": "readonly"
