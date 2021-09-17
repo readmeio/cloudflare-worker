@@ -154,6 +154,7 @@ describe('worker', () => {
       nock('https://example.com').post('/a?b=2').reply(200, '', {
         'x-readme-id': 'id',
         'x-readme-label': 'label',
+        'content-type': '',
       });
 
       const { har } = await requireWorker().fetchAndCollect(request);
