@@ -1,3 +1,5 @@
+> ⚠️ This repository has been moved to https://github.com/readmeio/metrics-sdks.
+
 # @readme/cloudflare-worker
 
 Cloudflare worker to get your API log data into ReadMe
